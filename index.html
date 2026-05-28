@@ -3,7 +3,10 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>Anime TV</title>
 
@@ -16,15 +19,19 @@ body{
     font-family:Arial;
 }
 
+/* HEADER */
+
 header{
     background:#111;
     padding:15px;
     text-align:center;
-    font-size:28px;
+    font-size:26px;
     position:sticky;
     top:0;
     z-index:100;
 }
+
+/* PLAYER */
 
 video,
 iframe{
@@ -33,6 +40,8 @@ iframe{
     background:black;
     border:none;
 }
+
+/* MAIN */
 
 .sections{
     padding:12px;
@@ -45,11 +54,16 @@ iframe{
     color:#ff3c3c;
 }
 
+/* GRID */
+
 .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+    grid-template-columns:
+    repeat(auto-fit,minmax(140px,1fr));
     gap:10px;
 }
+
+/* CARDS */
 
 .card,
 .episode{
@@ -65,15 +79,28 @@ iframe{
     font-size:18px;
 }
 
+/* THUMB */
+
 .thumb{
     width:100%;
     display:block;
 }
 
+/* TITLE */
+
 .title{
     padding:8px;
     font-size:14px;
 }
+
+/* YT PAGE */
+
+#ytPage{
+    display:none;
+    padding:12px;
+}
+
+/* SEARCH */
 
 .searchBox{
     display:flex;
@@ -95,6 +122,19 @@ iframe{
     border-radius:8px;
     background:red;
     color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+/* BACK BUTTON */
+
+.backBtn{
+    margin-bottom:15px;
+    background:#333;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    border-radius:8px;
     font-size:16px;
     cursor:pointer;
 }
@@ -125,7 +165,11 @@ type="video/mp4">
 
 </video>
 
-<div class="sections">
+<!-- MAIN PAGE -->
+
+<div
+class="sections"
+id="mainPage">
 
 <!-- SOLO LEVELING -->
 
@@ -135,26 +179,107 @@ Solo Leveling Hindi Season 1
 
 <div class="grid">
 
-<div class="episode" onclick="playEpisode(1)">EP 1</div>
-<div class="episode" onclick="playEpisode(2)">EP 2</div>
-<div class="episode" onclick="playEpisode(3)">EP 3</div>
-<div class="episode" onclick="playEpisode(4)">EP 4</div>
-<div class="episode" onclick="playEpisode(5)">EP 5</div>
-<div class="episode" onclick="playEpisode(6)">EP 6</div>
-<div class="episode" onclick="playEpisode(7)">EP 7</div>
-<div class="episode" onclick="playEpisode(8)">EP 8</div>
-<div class="episode" onclick="playEpisode(9)">EP 9</div>
-<div class="episode" onclick="playEpisode(10)">EP 10</div>
-<div class="episode" onclick="playEpisode(11)">EP 11</div>
-<div class="episode" onclick="playEpisode(12)">EP 12</div>
+<div
+class="episode"
+onclick="playEpisode(1)">
+EP 1
+</div>
+
+<div
+class="episode"
+onclick="playEpisode(2)">
+EP 2
+</div>
+
+<div
+class="episode"
+onclick="playEpisode(3)">
+EP 3
+</div>
+
+<div
+class="episode"
+onclick="playEpisode(4)">
+EP 4
+</div>
+
+<div
+class="episode"
+onclick="playEpisode(5)">
+EP 5
+</div>
+
+<div
+class="episode"
+onclick="playEpisode(6)">
+EP 6
+</div>
+
+<div
+class="episode"
+onclick="playEpisode(7)">
+EP 7
+</div>
+
+<div
+class="episode"
+onclick="playEpisode(8)">
+EP 8
+</div>
+
+<div
+class="episode"
+onclick="playEpisode(9)">
+EP 9
+</div>
+
+<div
+class="episode"
+onclick="playEpisode(10)">
+EP 10
+</div>
+
+<div
+class="episode"
+onclick="playEpisode(11)">
+EP 11
+</div>
+
+<div
+class="episode"
+onclick="playEpisode(12)">
+EP 12
+</div>
 
 </div>
 
-<!-- YOUTUBE SEARCH -->
+<!-- YOUTUBE BOX -->
 
 <div class="sectionTitle">
-YouTube Search
+YouTube
 </div>
+
+<div class="grid">
+
+<div
+class="episode"
+onclick="openYTPage()">
+Open YouTube Search
+</div>
+
+</div>
+
+</div>
+
+<!-- YOUTUBE PAGE -->
+
+<div id="ytPage">
+
+<button
+class="backBtn"
+onclick="closeYTPage()">
+Back
+</button>
 
 <div class="searchBox">
 
@@ -162,30 +287,34 @@ YouTube Search
 id="searchInput"
 placeholder="Search YouTube">
 
-<button onclick="searchYT()">
+<button
+onclick="searchYT()">
 Search
 </button>
 
 </div>
 
-<div id="ytResults" class="grid"></div>
+<div
+id="ytResults"
+class="grid">
+</div>
 
 </div>
 
 <script>
 
 /* =========================
-   YOUTUBE API KEY
+   API KEY
 ========================= */
 
-const API_KEY =
+var API_KEY =
 "AIzaSyANjjevbpy7wcZ-WZ06Vn_T1WyqD9TcngY";
 
 /* =========================
-   SOLO LEVELING LINKS
+   SOLO LEVELING
 ========================= */
 
-const episodes = {
+var episodes = {
 
 1:"https://hugh.cdn.rumble.cloud/video/fww1/b9/s8/2/6/L/n/w/6Lnwy.caa.mp4?u=0&b=0",
 
@@ -214,19 +343,21 @@ const episodes = {
 };
 
 /* =========================
-   PLAY ANIME
+   PLAY EPISODE
 ========================= */
 
 function playEpisode(ep){
 
 removeYT();
 
-let player =
+var player =
 document.getElementById("player");
 
-player.style.display = "block";
+player.style.display =
+"block";
 
-player.src = episodes[ep];
+player.src =
+episodes[ep];
 
 player.play();
 
@@ -235,65 +366,134 @@ window.scrollTo(0,0);
 }
 
 /* =========================
-   LIGHT YOUTUBE SEARCH
+   OPEN YT PAGE
 ========================= */
 
-async function searchYT(){
+function openYTPage(){
 
-let query =
-document.getElementById("searchInput").value;
+document.getElementById(
+"mainPage"
+).style.display =
+"none";
 
-let results =
-document.getElementById("ytResults");
+document.getElementById(
+"ytPage"
+).style.display =
+"block";
+
+}
+
+/* =========================
+   CLOSE YT PAGE
+========================= */
+
+function closeYTPage(){
+
+document.getElementById(
+"mainPage"
+).style.display =
+"block";
+
+document.getElementById(
+"ytPage"
+).style.display =
+"none";
+
+}
+
+/* =========================
+   OLD TV SEARCH SYSTEM
+========================= */
+
+function searchYT(){
+
+var query =
+document.getElementById(
+"searchInput"
+).value;
+
+var results =
+document.getElementById(
+"ytResults"
+);
 
 results.innerHTML =
 "Loading...";
 
-try{
+var xhr =
+new XMLHttpRequest();
 
-let response =
-await fetch(
+var url =
 
 "https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=4&q="
 
-+ encodeURIComponent(query)
++
 
-+ "&key="
+encodeURIComponent(query)
 
-+ API_KEY
++
 
+"&key="
+
++
+
+API_KEY;
+
+xhr.open(
+"GET",
+url,
+true
 );
 
-let data =
-await response.json();
+xhr.onreadystatechange =
+function(){
 
-results.innerHTML = "";
+if(xhr.readyState == 4){
+
+if(xhr.status == 200){
+
+var data =
+JSON.parse(
+xhr.responseText
+);
+
+results.innerHTML =
+"";
 
 if(!data.items){
 
 results.innerHTML =
-"Search Failed";
+"API Error";
 
 return;
 
 }
 
-for(let i=0;i<data.items.length;i++){
+for(
+var i=0;
+i<data.items.length;
+i++
+){
 
-let video =
+var video =
 data.items[i];
 
-let id =
+var id =
 video.id.videoId;
 
-let title =
+var title =
 video.snippet.title;
 
-let thumb =
-video.snippet.thumbnails.default.url;
+var thumb =
+video.snippet
+.thumbnails
+.default
+.url;
 
-let div =
-document.createElement("div");
+var div =
+document.createElement(
+"div"
+);
 
 div.className =
 "card";
@@ -301,29 +501,44 @@ div.className =
 div.innerHTML =
 
 '<img class="thumb" src="' +
+
 thumb +
+
 '">' +
 
 '<div class="title">' +
+
 title +
+
 '</div>';
 
-div.onclick = function(){
+div.onclick =
+(function(v){
 
-playYT(id);
+return function(){
+
+playYT(v);
 
 };
+
+})(id);
 
 results.appendChild(div);
 
 }
 
-}catch(e){
+}else{
 
 results.innerHTML =
-"Internet/API Error";
+"Connection Error";
 
 }
+
+}
+
+};
+
+xhr.send();
 
 }
 
@@ -333,8 +548,10 @@ results.innerHTML =
 
 function playYT(videoId){
 
-let player =
-document.getElementById("player");
+var player =
+document.getElementById(
+"player"
+);
 
 player.pause();
 
@@ -343,17 +560,23 @@ player.style.display =
 
 removeYT();
 
-let iframe =
-document.createElement("iframe");
+var iframe =
+document.createElement(
+"iframe"
+);
 
 iframe.id =
 "ytFrame";
 
 iframe.src =
 
-"https://www.youtube.com/embed/" +
+"https://www.youtube.com/embed/"
 
-videoId +
++
+
+videoId
+
++
 
 "?autoplay=1";
 
@@ -367,7 +590,9 @@ document.body.insertBefore(
 
 iframe,
 
-document.querySelector(".sections")
+document.getElementById(
+"mainPage"
+)
 
 );
 
@@ -376,13 +601,15 @@ window.scrollTo(0,0);
 }
 
 /* =========================
-   REMOVE OLD IFRAME
+   REMOVE YT
 ========================= */
 
 function removeYT(){
 
-let old =
-document.getElementById("ytFrame");
+var old =
+document.getElementById(
+"ytFrame"
+);
 
 if(old){
 
