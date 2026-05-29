@@ -19,8 +19,6 @@ body{
     font-family:Arial;
 }
 
-/* HEADER */
-
 header{
     background:#111;
     padding:15px;
@@ -31,15 +29,11 @@ header{
     z-index:100;
 }
 
-/* PLAYER */
-
 video{
     width:100%;
     height:45vh;
     background:black;
 }
-
-/* MAIN */
 
 .sections{
     padding:12px;
@@ -52,8 +46,6 @@ video{
     color:#ff3c3c;
 }
 
-/* GRID */
-
 .grid{
     display:grid;
     grid-template-columns:
@@ -61,79 +53,12 @@ video{
     gap:10px;
 }
 
-/* CARDS */
-
-.card,
 .episode{
     background:#222;
     border-radius:10px;
-    overflow:hidden;
-    cursor:pointer;
-}
-
-.episode{
     padding:15px;
     text-align:center;
     font-size:18px;
-}
-
-/* THUMB */
-
-.thumb{
-    width:100%;
-    display:block;
-}
-
-/* TITLE */
-
-.title{
-    padding:8px;
-    font-size:14px;
-}
-
-/* YT PAGE */
-
-#ytPage{
-    display:none;
-    padding:12px;
-}
-
-/* SEARCH */
-
-.searchBox{
-    display:flex;
-    gap:8px;
-    margin-bottom:15px;
-}
-
-.searchBox input{
-    flex:1;
-    padding:10px;
-    border:none;
-    border-radius:8px;
-    font-size:16px;
-}
-
-.searchBox button{
-    padding:10px 15px;
-    border:none;
-    border-radius:8px;
-    background:red;
-    color:white;
-    font-size:16px;
-    cursor:pointer;
-}
-
-/* BACK BUTTON */
-
-.backBtn{
-    margin-bottom:15px;
-    background:#333;
-    color:white;
-    border:none;
-    padding:10px 15px;
-    border-radius:8px;
-    font-size:16px;
     cursor:pointer;
 }
 
@@ -146,8 +71,6 @@ video{
 <header>
 Anime TV
 </header>
-
-<!-- PLAYER -->
 
 <video
 id="player"
@@ -163,138 +86,53 @@ type="video/mp4">
 
 </video>
 
-<!-- MAIN PAGE -->
+<div class="sections">
 
-<div
-class="sections"
-id="mainPage">
-
-<!-- SOLO LEVELING -->
+<!-- S1 -->
 
 <div class="sectionTitle">
-Solo Leveling Hindi Season 1
+Solo Leveling Season 1 Hindi
 </div>
 
 <div class="grid">
 
-<div
-class="episode"
-onclick="playEpisode(1)">
-EP 1
-</div>
-
-<div
-class="episode"
-onclick="playEpisode(2)">
-EP 2
-</div>
-
-<div
-class="episode"
-onclick="playEpisode(3)">
-EP 3
-</div>
-
-<div
-class="episode"
-onclick="playEpisode(4)">
-EP 4
-</div>
-
-<div
-class="episode"
-onclick="playEpisode(5)">
-EP 5
-</div>
-
-<div
-class="episode"
-onclick="playEpisode(6)">
-EP 6
-</div>
-
-<div
-class="episode"
-onclick="playEpisode(7)">
-EP 7
-</div>
-
-<div
-class="episode"
-onclick="playEpisode(8)">
-EP 8
-</div>
-
-<div
-class="episode"
-onclick="playEpisode(9)">
-EP 9
-</div>
-
-<div
-class="episode"
-onclick="playEpisode(10)">
-EP 10
-</div>
-
-<div
-class="episode"
-onclick="playEpisode(11)">
-EP 11
-</div>
-
-<div
-class="episode"
-onclick="playEpisode(12)">
-EP 12
-</div>
+<div class="episode" onclick="playEpisode(s1[1])">EP 1</div>
+<div class="episode" onclick="playEpisode(s1[2])">EP 2</div>
+<div class="episode" onclick="playEpisode(s1[3])">EP 3</div>
+<div class="episode" onclick="playEpisode(s1[4])">EP 4</div>
+<div class="episode" onclick="playEpisode(s1[5])">EP 5</div>
+<div class="episode" onclick="playEpisode(s1[6])">EP 6</div>
+<div class="episode" onclick="playEpisode(s1[7])">EP 7</div>
+<div class="episode" onclick="playEpisode(s1[8])">EP 8</div>
+<div class="episode" onclick="playEpisode(s1[9])">EP 9</div>
+<div class="episode" onclick="playEpisode(s1[10])">EP 10</div>
+<div class="episode" onclick="playEpisode(s1[11])">EP 11</div>
+<div class="episode" onclick="playEpisode(s1[12])">EP 12</div>
 
 </div>
 
-<!-- YOUTUBE -->
+<!-- S2 -->
 
 <div class="sectionTitle">
-YouTube
+Solo Leveling Season 2 Hindi
 </div>
 
 <div class="grid">
 
-<div
-class="episode"
-onclick="openYTPage()">
-Open YouTube Search
-</div>
+<div class="episode" onclick="playEpisode(s2[1])">EP 1</div>
+<div class="episode" onclick="playEpisode(s2[2])">EP 2</div>
+<div class="episode" onclick="playEpisode(s2[3])">EP 3</div>
+<div class="episode" onclick="playEpisode(s2[4])">EP 4</div>
+<div class="episode" onclick="playEpisode(s2[5])">EP 5</div>
+<div class="episode" onclick="playEpisode(s2[6])">EP 6</div>
+<div class="episode" onclick="playEpisode(s2[7])">EP 7</div>
+<div class="episode" onclick="playEpisode(s2[8])">EP 8</div>
+<div class="episode" onclick="playEpisode(s2[9])">EP 9</div>
+<div class="episode" onclick="playEpisode(s2[10])">EP 10</div>
+<div class="episode" onclick="playEpisode(s2[11])">EP 11</div>
+<div class="episode" onclick="playEpisode(s2[12])">EP 12</div>
+<div class="episode" onclick="playEpisode(s2[13])">EP 13</div>
 
-</div>
-
-</div>
-
-<!-- YOUTUBE PAGE -->
-
-<div id="ytPage">
-
-<button
-class="backBtn"
-onclick="closeYTPage()">
-Back
-</button>
-
-<div class="searchBox">
-
-<input
-id="searchInput"
-placeholder="Search YouTube">
-
-<button
-onclick="searchYT()">
-Search
-</button>
-
-</div>
-
-<div
-id="ytResults"
-class="grid">
 </div>
 
 </div>
@@ -302,17 +140,10 @@ class="grid">
 <script>
 
 /* =========================
-   API KEY
+   SEASON 1
 ========================= */
 
-var API_KEY =
-"AIzaSyANjjevbpy7wcZ-WZ06Vn_T1WyqD9TcngY";
-
-/* =========================
-   SOLO LEVELING
-========================= */
-
-var episodes = {
+var s1 = {
 
 1:"https://hugh.cdn.rumble.cloud/video/fww1/b9/s8/2/6/L/n/w/6Lnwy.caa.mp4?u=0&b=0",
 
@@ -341,219 +172,55 @@ var episodes = {
 };
 
 /* =========================
-   PLAY EPISODE
+   SEASON 2
 ========================= */
 
-function playEpisode(ep){
+var s2 = {
+
+1:"https://hugh.cdn.rumble.cloud/video/fww1/8c/s8/2/U/L/M/x/ULMxy.caa.mp4?u=0&b=0",
+
+2:"https://hugh.cdn.rumble.cloud/video/fww1/be/s8/2/o/N/M/x/oNMxy.caa.mp4?u=0&b=0",
+
+3:"https://hugh.cdn.rumble.cloud/video/fww1/ac/s8/2/A/O/M/x/AOMxy.caa.mp4?u=0&b=0",
+
+4:"https://hugh.cdn.rumble.cloud/video/fww1/2b/s8/2/g/S/M/x/gSMxy.caa.mp4?u=0&b=0",
+
+5:"https://hugh.cdn.rumble.cloud/video/fww1/01/s8/2/g/k/O/x/gkOxy.caa.mp4?u=0&b=0",
+
+6:"https://hugh.cdn.rumble.cloud/video/fww1/2c/s8/2/K/m/O/x/KmOxy.caa.mp4?u=0&b=0",
+
+7:"https://hugh.cdn.rumble.cloud/video/fww1/15/s8/2/Y/o/O/x/YoOxy.caa.mp4?u=0&b=0",
+
+8:"https://hugh.cdn.rumble.cloud/video/fww1/b9/s8/2/W/s/O/x/WsOxy.caa.mp4?u=0&b=0",
+
+9:"https://hugh.cdn.rumble.cloud/video/fww1/94/s8/2/0/v/O/x/0vOxy.caa.mp4?u=0&b=0",
+
+10:"https://hugh.cdn.rumble.cloud/video/fww1/c1/s8/2/8/A/O/x/8AOxy.caa.mp4?u=0&b=0",
+
+11:"https://hugh.cdn.rumble.cloud/video/fww1/c1/s8/2/8/A/O/x/8AOxy.Faa.mp4",
+
+12:"https://hugh.cdn.rumble.cloud/video/fww1/be/s8/2/v/W/5/D/vW5Dy.Faa.mp4",
+
+13:"https://hugh.cdn.rumble.cloud/video/fww1/be/s8/2/v/W/5/D/vW5Dy.Faa.mp4"
+
+};
+
+/* =========================
+   PLAYER
+========================= */
+
+function playEpisode(url){
 
 var player =
 document.getElementById(
 "player"
 );
 
-player.src =
-episodes[ep];
+player.src = url;
 
 player.play();
 
 window.scrollTo(0,0);
-
-}
-
-/* =========================
-   OPEN YT PAGE
-========================= */
-
-function openYTPage(){
-
-document.getElementById(
-"mainPage"
-).style.display =
-"none";
-
-document.getElementById(
-"ytPage"
-).style.display =
-"block";
-
-}
-
-/* =========================
-   CLOSE YT PAGE
-========================= */
-
-function closeYTPage(){
-
-document.getElementById(
-"mainPage"
-).style.display =
-"block";
-
-document.getElementById(
-"ytPage"
-).style.display =
-"none";
-
-}
-
-/* =========================
-   OLD TV SEARCH SYSTEM
-========================= */
-
-function searchYT(){
-
-var query =
-document.getElementById(
-"searchInput"
-).value;
-
-var results =
-document.getElementById(
-"ytResults"
-);
-
-results.innerHTML =
-"Loading...";
-
-var xhr =
-new XMLHttpRequest();
-
-var url =
-
-"https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=4&q="
-
-+
-
-encodeURIComponent(query)
-
-+
-
-"&key="
-
-+
-
-API_KEY;
-
-xhr.open(
-"GET",
-url,
-true
-);
-
-xhr.onreadystatechange =
-function(){
-
-if(xhr.readyState == 4){
-
-if(xhr.status == 200){
-
-var data =
-JSON.parse(
-xhr.responseText
-);
-
-results.innerHTML =
-"";
-
-if(!data.items){
-
-results.innerHTML =
-"API Error";
-
-return;
-
-}
-
-for(
-var i=0;
-i<data.items.length;
-i++
-){
-
-var video =
-data.items[i];
-
-var id =
-video.id.videoId;
-
-var title =
-video.snippet.title;
-
-var thumb =
-video.snippet
-.thumbnails
-.default
-.url;
-
-var div =
-document.createElement(
-"div"
-);
-
-div.className =
-"card";
-
-div.innerHTML =
-
-'<img class="thumb" src="' +
-
-thumb +
-
-'">' +
-
-'<div class="title">' +
-
-title +
-
-'</div>';
-
-div.onclick =
-(function(v){
-
-return function(){
-
-playYT(v);
-
-};
-
-})(id);
-
-results.appendChild(div);
-
-}
-
-}else{
-
-results.innerHTML =
-"Connection Error";
-
-}
-
-}
-
-};
-
-xhr.send();
-
-}
-
-/* =========================
-   OPEN YOUTUBE VIDEO
-========================= */
-
-function playYT(videoId){
-
-window.open(
-
-"https://m.youtube.com/watch?v="
-
-+
-
-videoId,
-
-"_self"
-
-);
 
 }
 
